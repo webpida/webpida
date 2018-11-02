@@ -3,14 +3,14 @@ cd /home/web/
 eval "mkdir -p $1/{Document,Music,Video}"
 echo directory for $1 creared.
 inpath="/app/web/pay"
-encpath="/app/web/enc_pay/"
-arhpath="/app/web/enc_pay/ARCHIVE/"
+encpath="/app/web/encpt_pay/"
+arhpath="/app/web/encpt_pay/ARCHIVE/"
 enchpath="/home/web/javafile_folder/"
 if [ -z "$(ls -A $inpath)" ]; then
 echo "$inpath is Empty"
 else
 cd "$inpath"
-find . -type f -name 'payment*.*' | while read FILE ; do
+find . -type f -name 'pay*.*' | while read FILE ; do
 newfile="$(echo "$FILE" |sed -e 's/\_//g')" ;
 mv "$FILE" "$newfile" ;
 #done
